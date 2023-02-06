@@ -103,11 +103,10 @@ export default function Home() {
           </div>
         </section>
         <section className="mb-10">
-          <div>
+          <div className="mb-10">
             <h3 className="text-3xl py-1 font-semibold dark:text-white">
               Skills & Tools
             </h3>
-            <p className="text-md py-2 leading-8 text-gray-800"></p>
           </div>
           <div className="flex gap-10 flex-wrap justify-center">
             <SkillCard icon={<AiFillHtml5 />} name="HTML5" />

@@ -23,3 +23,16 @@ a {
   font-family: "burtons";
   src: url("../../public/Burtons.otf");
 }
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+  }
+
+::-webkit-scrollbar-thumb{
+  background-color: #2dd4bf;
+  border-radius: 20px;
+}
+
+::-webkit-scrollbar-track {
+  background: #ccfbf1;
+}
