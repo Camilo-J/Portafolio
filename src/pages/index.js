@@ -24,18 +24,16 @@ import {
 import { HiOutlineCommandLine } from "react-icons/hi2";
 
 import Image from "next/image";
-import deved from "../../public/dev-ed-wave.png";
-import design from "../../public/design.png";
-import code from "../../public/code.png";
-import consulting from "../../public/consulting.png";
-import web1 from "../../public/web1.png";
-import web2 from "../../public/web2.png";
-import web3 from "../../public/web3.png";
-import web4 from "../../public/web4.png";
-import web5 from "../../public/web5.png";
-import web6 from "../../public/web6.png";
+import deved from "../../public/developerIcon.svg";
+import web1 from "../../public/keepable.png";
+import web2 from "../../public/GitHubStats.png";
+import web3 from "../../public/Eatable.png";
+import web4 from "../../public/pokemon-ruby.png";
+import web5 from "../../public/SomeSplash.png";
+import web6 from "../../public/Tweetable.png";
 import { useState } from "react";
 import SkillCard from "@/components/skilCard";
+import ImageCard from "@/components/imageCard";
 
 export default function Home() {
   const [darkMode, setDarkMode] = useState(false);
@@ -48,10 +46,10 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className="bg-white px-10 md:px-20 lg:px-40 dark:bg-gray-800">
-        <section className="min-h-screen">
+      <main className="bg-white px-10 md:px-20 transition duration-500 ease-in-out lg:px-40 dark:bg-gray-800">
+        <section className="min-h-screen ">
           <nav className="py-10 mb-12 flex justify-between">
-            <h1 className="text-xl font-burtons dark:text-white">Camilo</h1>
+            <h1 className="text-3xl font-burtons dark:text-white">Camilo</h1>
             <ul className="flex items-center">
               <li>
                 {darkMode ? (
@@ -68,41 +66,58 @@ export default function Home() {
               </li>
               <li className="flex">
                 <a
-                  className="bg-gradient-to-r from-cyan-500 to-teal-500 text-white px-4 py-2 rounded-md ml-8"
-                  href="#"
+                  className="bg-gradient-to-r from-cyan-500 to-teal-500 text-white px-4 py-2 rounded-md ml-8 transition duration-500 ease-in-out hover:shadow-lg hover:shadow-teal-300"
+                  href="public/CV2 - Camilo Huanca.docx.pdf"
+                  // target="_blank"
+                  // rel="noreferrer"
+                  download
                 >
                   Resume
                 </a>
               </li>
             </ul>
           </nav>
-          <div className="text-center p-10">
-            <h2 className="text-5xl py-2 text-teal-600 font-medium md:text-6xl">
-              Camilo Huanca
-            </h2>
-            <h3 className="text-2xl py-2 md:text-3xl dark:text-white">
-              Full Stack Web Developer
-            </h3>
-            <p className="text-md py-5 leading-8 text-gray-800 md:text-xl max-w-xl mx-auto dark:text-white">
-              I love exploring and learning new technologies. I&apos;m
-              passionate about bringing digital products to life and I&apos;m a
-              lifelong learner 🎓
-            </p>
-          </div>
-          <div className=" text-5xl flex justify-center gap-16 py-3 text-gray-600 dark:text-teal-500">
-            <a href="https://github.com/Camilo-J">
-              <AiFillGithub />
-            </a>
-            <a href="https://www.linkedin.com/in/camilohuanca/">
-              <AiFillLinkedin />
-            </a>
-            <AiFillYoutube />
-          </div>
-          <div className="relative mx-auto bg-gradient-to-b from-teal-500 rounded-full w-80 h-80 mt-20 mb-10 overflow-hidden md:h-96 md:w-96">
-            <Image src={deved} alt="" fill objectFit="cover" />
+          <div className="lg:flex lg:gap-x-8 lg:items-center">
+            <div>
+              <div className="text-center p-10">
+                <h2 className="text-5xl py-2 text-teal-600 font-medium md:text-6xl">
+                  Camilo Huanca
+                </h2>
+                <h3 className="text-2xl py-2 md:text-3xl dark:text-white">
+                  Full Stack Web Developer
+                </h3>
+                <p className="text-md py-5 leading-8 text-gray-800 md:text-xl max-w-xl mx-auto dark:text-white">
+                  I love exploring and learning new technologies. I&apos;m
+                  passionate about bringing digital products to life and
+                  I&apos;m a lifelong learner 🎓
+                </p>
+              </div>
+              <div className=" text-5xl flex justify-center gap-16 py-3 text-gray-600 dark:text-teal-500">
+                <a
+                  className="transition duration-500 ease-in-out rounded-full hover:text-teal-500  dark:hover:text-teal-300 hover:scale-105"
+                  href="https://github.com/Camilo-J"
+                  target={"_blank"}
+                  rel="noreferrer"
+                >
+                  <AiFillGithub />
+                </a>
+                <a
+                  className="transition duration-500 ease-in-out rounded-full  hover:text-teal-500  dark:hover:text-teal-300 hover:scale-105"
+                  href="https://www.linkedin.com/in/camilohuanca/"
+                  target={"_blank"}
+                  rel="noreferrer"
+                >
+                  <AiFillLinkedin />
+                </a>
+                <AiFillYoutube className="transition duration-500 ease-in-out rounded-full  hover:text-teal-500  dark:hover:text-teal-300 hover:scale-105" />
+              </div>
+            </div>
+            <div className="relative mx-auto bg-gradient-to-b from-teal-500 rounded-full w-80 h-80 mt-20 mb-10 overflow-hidden md:h-96 md:w-96">
+              <Image src={deved} alt="" fill objectFit="cover" />
+            </div>
           </div>
         </section>
-        <section className="mb-10">
+        <section className="mb-24">
           <div className="mb-10">
             <h3 className="text-3xl py-1 font-semibold dark:text-white">
               Skills & Tools
@@ -132,66 +147,46 @@ export default function Home() {
             </h3>
           </div>
           <div className="flex flex-col gap-10 py-10 lg:flex-row lg:flex-wrap">
-            <div className="basis-1/3 flex-1">
-              <Image
-                src={web1}
-                alt=""
-                className="rounded-lg object-cover"
-                width={"100%"}
-                height={100}
-                layout="responsive"
-              />
-            </div>
-            <div className="basis-1/3 flex-1">
-              <Image
-                src={web2}
-                alt=""
-                className="rounded-lg object-cover"
-                width={"100%"}
-                height={100}
-                layout="responsive"
-              />
-            </div>
-            <div className="basis-1/3 flex-1">
-              <Image
-                src={web3}
-                alt=""
-                className="rounded-lg object-cover"
-                width={"100%"}
-                height={100}
-                layout="responsive"
-              />
-            </div>
-            <div className="basis-1/3 flex-1">
-              <Image
-                src={web4}
-                alt=""
-                className="rounded-lg object-cover"
-                width={"100%"}
-                height={100}
-                layout="responsive"
-              />
-            </div>
-            <div className="basis-1/3 flex-1">
-              <Image
-                src={web5}
-                alt=""
-                className="rounded-lg object-cover"
-                width={"100%"}
-                height={100}
-                layout="responsive"
-              />
-            </div>
-            <div className="basis-1/3 flex-1">
-              <Image
-                src={web6}
-                alt=""
-                className="rounded-lg object-cover"
-                width={"100%"}
-                height={100}
-                layout="responsive"
-              />
-            </div>
+            <ImageCard
+              title={"Keepable"}
+              content={`vanilla-javascript - HTML - CSS`}
+              image={web1}
+              demo={"https://keepable-js.netlify.app/"}
+              github="https://github.com/Camilo-J/Keepable-js"
+            />
+            <ImageCard
+              title={"GitHub Stats"}
+              content={`React - Emotion - Javacript - Html -Api GitHub`}
+              image={web2}
+              demo={"https://githubstatsca.netlify.app/"}
+              github="https://github.com/Camilo-J/GitHub-Stats"
+            />
+            <ImageCard
+              title={"Eatable"}
+              content={`React- Javascript -Html - Emotion -Api Rest`}
+              image={web3}
+              demo={"https://eatableca.netlify.app/"}
+              github="https://github.com/Camilo-J/Eatable"
+            />
+
+            <ImageCard
+              title={"Pokemon Ruby"}
+              content={`Command Line Interface - OOP - ruby`}
+              image={web4}
+              github="https://github.com/Camilo-J/Pokemon-Ruby"
+            />
+            <ImageCard
+              title={"Some Splash"}
+              content={`Ruby on Rails - Ruby - Tailwind CSS - PostgreSql`}
+              image={web5}
+              github="https://github.com/Camilo-J/Pokemon-Ruby"
+            />
+            <ImageCard
+              title={"Tweetable"}
+              content={`Ruby on Rails - Ruby - CSS - PostgreSql - Devise - Oauth Github`}
+              image={web6}
+              github="https://github.com/Camilo-J/Tweetable"
+            />
           </div>
         </section>
       </main>
