@@ -11,8 +11,8 @@ function ImageCard({ image, github, demo, title, content }) {
         height={100}
         layout="responsive"
       />
-      <div className="group/edit top-full p-4 flex flex-col justify-center gap-8 absolute text-white  h-full w-full  bg-blue-400/60 group-hover/images:top-0  transition-all duration-700">
-        <div className="flex flex-col gap-8 text-center">
+      <div className="group/edit top-full p-4 flex flex-col justify-center sm:gap-8 absolute text-white  h-full w-full  bg-blue-400/60 group-hover/images:top-0  transition-all duration-700">
+        <div className="flex flex-col gap-2 sm:gap-8 text-center">
           <h4 className="text-4xl font-semibold">{title}</h4>
           <p className="text-lg font-medium">{content}</p>
         </div>
