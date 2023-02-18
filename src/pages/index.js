@@ -1,42 +1,24 @@
 import Head from "next/head";
-import { BsFillMoonStarsFill, BsFillSunFill } from "react-icons/bs";
-import {
-  AiFillGithub,
-  AiFillLinkedin,
-  AiFillYoutube,
-  AiFillHtml5,
-} from "react-icons/ai";
-import {
-  DiCss3,
-  DiJavascript1,
-  DiReact,
-  DiGit,
-  DiRuby,
-  DiLinux,
-} from "react-icons/di";
-import {
-  SiRubyonrails,
-  SiPostgresql,
-  SiTailwindcss,
-  SiFigma,
-  SiVisualstudiocode,
-} from "react-icons/si";
-import { HiOutlineCommandLine } from "react-icons/hi2";
-
+import { AiFillGithub, AiFillLinkedin, AiFillYoutube } from "react-icons/ai";
+import { TiHome } from "react-icons/ti";
+import { IoBook } from "react-icons/io5";
 import Image from "next/image";
 import deved from "../../public/developerIcon.svg";
-import web1 from "../../public/keepable.png";
-import web2 from "../../public/GitHubStats.png";
-import web3 from "../../public/Eatable.png";
-import web4 from "../../public/pokemon-ruby.png";
-import web5 from "../../public/SomeSplash.png";
-import web6 from "../../public/Tweetable.png";
+import { GiToolbox } from "react-icons/gi";
+import { ImFileOpenoffice } from "react-icons/im";
+import { RxHamburgerMenu } from "react-icons/rx";
+
 import { useState } from "react";
-import SkillCard from "@/components/skilCard";
-import ImageCard from "@/components/imageCard";
+import Portafolio from "@/components/sectionPortafolio";
+import Skill from "@/components/sectionSkill";
 
 export default function Home() {
   const [darkMode, setDarkMode] = useState(false);
+  const [currentPage, SetCurrentPage] = useState("home");
+
+  function handlePage(page) {
+    SetCurrentPage(page);
+  }
 
   return (
     <div className={darkMode ? "dark" : ""}>
@@ -46,149 +28,117 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className="bg-white px-10 md:px-20 transition duration-500 ease-in-out lg:px-40 dark:bg-gray-800">
-        <section className="min-h-screen ">
-          <nav className="py-10 mb-12 flex justify-between">
-            <h1 className="text-3xl font-burtons dark:text-white">Camilo</h1>
-            <ul className="flex items-center">
-              <li>
-                {darkMode ? (
-                  <BsFillSunFill
-                    onClick={() => setDarkMode(!darkMode)}
-                    className="cursor-pointer text-2xl text-white"
-                  />
-                ) : (
-                  <BsFillMoonStarsFill
-                    onClick={() => setDarkMode(!darkMode)}
-                    className="cursor-pointer text-2xl"
-                  />
-                )}
-              </li>
-              <li className="flex">
-                <a
-                  className="bg-gradient-to-r from-cyan-500 to-teal-500 text-white px-4 py-2 rounded-md ml-8 transition duration-500 ease-in-out hover:shadow-lg hover:shadow-teal-300"
-                  href="public/CV2 - Camilo Huanca.docx.pdf"
-                  // target="_blank"
-                  // rel="noreferrer"
-                  download
+      <main className="bg-white md:flex flex-col relative dark:bg-gray-800">
+        <div>
+          <label
+            htmlFor="nav"
+            className="md:hidden text-4xl absolute top-3 left-1"
+          >
+            <RxHamburgerMenu />
+          </label>
+          <input id="nav" type={"checkbox"} className="peer" hidden />
+          <div className="md:ml-2 w-24 absolute justify-start -top-28 transition-all duration-500 peer-checked:top-44 md:top-0 md:block md:h-screen z-50">
+            <nav className="w-20 flex md:h-full items-center">
+              <ul className="md:flex flex-col gap-6 absolute md:left-0  text-teal-500 dark:text-white">
+                <li
+                  className="group/home w-14 h-14 hover:text-white  hover:bg-teal-500 rounded-full  flex items-center cursor-pointer justify-center transition-all duration-500 hover:w-32"
+                  onClick={() => handlePage("home")}
                 >
-                  Resume
-                </a>
-              </li>
-            </ul>
-          </nav>
-          <div className="lg:flex lg:gap-x-8 lg:items-center">
-            <div>
-              <div className="text-center p-10">
-                <h2 className="text-5xl py-2 text-teal-600 font-medium md:text-6xl">
-                  Camilo Huanca
-                </h2>
-                <h3 className="text-2xl py-2 md:text-3xl dark:text-white">
-                  Full Stack Web Developer
-                </h3>
-                <p className="text-md py-5 leading-8 text-gray-800 md:text-xl max-w-xl mx-auto dark:text-white">
-                  I love exploring and learning new technologies. I&apos;m
-                  passionate about bringing digital products to life and
-                  I&apos;m a lifelong learner 🎓
-                </p>
+                  <a className="flex gap-4 items-center justify-center   group-hover/home:p-3">
+                    <TiHome className="text-3xl" />
+                    <span className="hidden group-hover/home:block text-lg font-medium">
+                      Home
+                    </span>
+                  </a>
+                </li>
+                <li
+                  className="group/project w-14 h-14 hover:text-white  hover:bg-teal-500 rounded-full  flex items-center justify-center transition-all duration-500 hover:w-32 cursor-pointer"
+                  onClick={() => handlePage("portafolio")}
+                >
+                  <a className="flex gap-4 items-center justify-center   group-hover/project:p-3">
+                    <IoBook className="text-3xl" />
+                    <span className="hidden text-lg font-medium group-hover/project:block">
+                      Projects
+                    </span>
+                  </a>
+                </li>
+                <li
+                  className="group/skills w-14 h-14 hover:text-white  hover:bg-teal-500 rounded-full flex items-center justify-center transition-all duration-500 hover:w-32 cursor-pointer"
+                  onClick={() => handlePage("skills")}
+                >
+                  <a className="flex gap-4 items-center justify-center    group-hover/skills:p-3">
+                    <GiToolbox className="text-3xl" />
+                    <span className="hidden  text-lg font-medium group-hover/skills:flex">
+                      Skills
+                    </span>
+                  </a>
+                </li>
+                <li className="group/skills w-14 h-14 hover:text-white  hover:bg-teal-500 rounded-full flex items-center justify-center transition-all duration-500 hover:w-32 cursor-pointer">
+                  <a
+                    className="flex gap-4 items-center justify-center    group-hover/skills:p-3"
+                    href="https://drive.google.com/file/d/1ezUxDUiJ64T_mvA_ZUtZYwZrqpWXH5X7/view?usp=sharing"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <ImFileOpenoffice className="text-3xl" />
+                    <span className="hidden  text-lg font-medium group-hover/skills:flex">
+                      Resume
+                    </span>
+                  </a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+        <div className="px-10 md:px-20 transition duration-500 ease-in-out lg:px-40 self-center">
+          <section className="min-h-screen md:flex">
+            {currentPage === "home" ? (
+              <div className="lg:flex lg:gap-x-8 lg:items-center">
+                <div>
+                  <div className="text-center p-10">
+                    <h2 className="text-5xl py-2 text-teal-600 font-medium md:text-6xl">
+                      Camilo Huanca
+                    </h2>
+                    <h3 className="text-2xl py-2 md:text-3xl dark:text-white">
+                      Full Stack Web Developer
+                    </h3>
+                    <p className="text-md py-5 leading-8 text-gray-800 md:text-xl max-w-xl mx-auto dark:text-white">
+                      I love exploring and learning new technologies. I&apos;m
+                      passionate about bringing digital products to life and
+                      I&apos;m a lifelong learner 🎓
+                    </p>
+                  </div>
+                  <div className=" text-5xl flex justify-center gap-16 py-3 text-gray-600 dark:text-teal-500">
+                    <a
+                      className="transition duration-500 ease-in-out rounded-full hover:text-teal-500  dark:hover:text-teal-300 hover:scale-105"
+                      href="https://github.com/Camilo-J"
+                      target={"_blank"}
+                      rel="noreferrer"
+                    >
+                      <AiFillGithub />
+                    </a>
+                    <a
+                      className="transition duration-500 ease-in-out rounded-full  hover:text-teal-500  dark:hover:text-teal-300 hover:scale-105"
+                      href="https://www.linkedin.com/in/camilohuanca/"
+                      target={"_blank"}
+                      rel="noreferrer"
+                    >
+                      <AiFillLinkedin />
+                    </a>
+                    <AiFillYoutube className="transition duration-500 ease-in-out rounded-full  hover:text-teal-500  dark:hover:text-teal-300 hover:scale-105" />
+                  </div>
+                </div>
+                <div className="relative mx-auto bg-gradient-to-b from-teal-500 rounded-full w-80 h-80 mt-20 mb-10 overflow-hidden md:h-96 md:w-96">
+                  <Image src={deved} alt="" fill objectFit="cover" />
+                </div>
               </div>
-              <div className=" text-5xl flex justify-center gap-16 py-3 text-gray-600 dark:text-teal-500">
-                <a
-                  className="transition duration-500 ease-in-out rounded-full hover:text-teal-500  dark:hover:text-teal-300 hover:scale-105"
-                  href="https://github.com/Camilo-J"
-                  target={"_blank"}
-                  rel="noreferrer"
-                >
-                  <AiFillGithub />
-                </a>
-                <a
-                  className="transition duration-500 ease-in-out rounded-full  hover:text-teal-500  dark:hover:text-teal-300 hover:scale-105"
-                  href="https://www.linkedin.com/in/camilohuanca/"
-                  target={"_blank"}
-                  rel="noreferrer"
-                >
-                  <AiFillLinkedin />
-                </a>
-                <AiFillYoutube className="transition duration-500 ease-in-out rounded-full  hover:text-teal-500  dark:hover:text-teal-300 hover:scale-105" />
-              </div>
-            </div>
-            <div className="relative mx-auto bg-gradient-to-b from-teal-500 rounded-full w-80 h-80 mt-20 mb-10 overflow-hidden md:h-96 md:w-96">
-              <Image src={deved} alt="" fill objectFit="cover" />
-            </div>
-          </div>
-        </section>
-        <section className="mb-24">
-          <div className="mb-10">
-            <h3 className="text-3xl py-1 font-semibold dark:text-white">
-              Skills & Tools
-            </h3>
-          </div>
-          <div className="flex gap-10 flex-wrap justify-center">
-            <SkillCard icon={<AiFillHtml5 />} name="HTML5" />
-            <SkillCard icon={<DiCss3 />} name="CSS3" />
-            <SkillCard icon={<DiJavascript1 />} name="JavaScript" />
-            <SkillCard icon={<DiReact />} name="React" />
-            <SkillCard icon={<DiGit />} name="Git" />
-            <SkillCard icon={<AiFillGithub />} name="GitHub" />
-            <SkillCard icon={<DiRuby />} name="Ruby" />
-            <SkillCard icon={<SiRubyonrails />} name="Ruby on Rails" />
-            <SkillCard icon={<SiPostgresql />} name="PostgreSql" />
-            <SkillCard icon={<SiTailwindcss />} name="TailwindCss" />
-            <SkillCard icon={<HiOutlineCommandLine />} name="Command Line" />
-            <SkillCard icon={<SiVisualstudiocode />} name="VsCode" />
-            <SkillCard icon={<SiFigma />} name="Figma" />
-            <SkillCard icon={<DiLinux />} name="Linux" />
-          </div>
-        </section>
-        <section>
-          <div>
-            <h3 className="text-3xl py-1 font-semibold dark:text-white">
-              Projects
-            </h3>
-          </div>
-          <div className="flex flex-col gap-10 py-10 lg:flex-row lg:flex-wrap">
-            <ImageCard
-              title={"Keepable"}
-              content={`vanilla-javascript - HTML - CSS`}
-              image={web1}
-              demo={"https://keepable-js.netlify.app/"}
-              github="https://github.com/Camilo-J/Keepable-js"
-            />
-            <ImageCard
-              title={"GitHub Stats"}
-              content={`React - Emotion - Javacript - Html -Api GitHub`}
-              image={web2}
-              demo={"https://githubstatsca.netlify.app/"}
-              github="https://github.com/Camilo-J/GitHub-Stats"
-            />
-            <ImageCard
-              title={"Eatable"}
-              content={`React- Javascript -Html - Emotion -Api Rest`}
-              image={web3}
-              demo={"https://eatableca.netlify.app/"}
-              github="https://github.com/Camilo-J/Eatable"
-            />
-
-            <ImageCard
-              title={"Pokemon Ruby"}
-              content={`Command Line Interface - OOP - ruby`}
-              image={web4}
-              github="https://github.com/Camilo-J/Pokemon-Ruby"
-            />
-            <ImageCard
-              title={"Some Splash"}
-              content={`Ruby on Rails - Ruby - Tailwind CSS - PostgreSql`}
-              image={web5}
-              github="https://github.com/Camilo-J/Pokemon-Ruby"
-            />
-            <ImageCard
-              title={"Tweetable"}
-              content={`Ruby on Rails - Ruby - CSS - PostgreSql - Devise - Oauth Github`}
-              image={web6}
-              github="https://github.com/Camilo-J/Tweetable"
-            />
-          </div>
-        </section>
+            ) : currentPage === "portafolio" ? (
+              <Portafolio />
+            ) : (
+              <Skill />
+            )}
+          </section>
+        </div>
       </main>
     </div>
   );
