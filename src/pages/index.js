@@ -7,6 +7,7 @@ import deved from "../../public/developerIcon.svg";
 import { GiToolbox } from "react-icons/gi";
 import { ImFileOpenoffice } from "react-icons/im";
 import { RxHamburgerMenu } from "react-icons/rx";
+import { motion } from "framer-motion";
 
 import { useState } from "react";
 import Portafolio from "@/components/sectionPortafolio";
@@ -99,7 +100,12 @@ export default function Home() {
         <div className="px-10 md:px-20 transition duration-500 ease-in-out lg:px-40 self-center">
           <section className="min-h-screen md:flex">
             {currentPage === "home" ? (
-              <div className="lg:flex lg:gap-x-8 lg:items-center">
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ ease: "easeOut", duration: 1 }}
+                className="lg:flex lg:gap-x-8 lg:items-center"
+              >
                 <div>
                   <div className="text-center p-10">
                     <h2 className="text-5xl py-2 text-teal-600 font-medium md:text-6xl">
@@ -137,7 +143,7 @@ export default function Home() {
                 <div className="relative mx-auto bg-gradient-to-b from-teal-500 rounded-full w-80 h-80 mt-20 mb-10 overflow-hidden md:h-96 md:w-96">
                   <Image src={deved} alt="" fill objectFit="cover" />
                 </div>
-              </div>
+              </motion.div>
             ) : currentPage === "portafolio" ? (
               <Portafolio />
             ) : (

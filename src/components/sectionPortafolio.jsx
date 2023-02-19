@@ -1,3 +1,5 @@
+import { motion } from "framer-motion";
+
 import ImageCard from "./imageCard";
 import web1 from "../../public/keepable.png";
 import web2 from "../../public/GitHubStats.png";
@@ -8,7 +10,12 @@ import web6 from "../../public/Tweetable.png";
 
 function Portafolio() {
   return (
-    <section className="flex flex-col py-2 md:py-10">
+    <motion.section
+      initial={{ opacity: 0, x: 100 }}
+      transition={{ ease: "easeOut", duration: 1 }}
+      animate={{ opacity: 1, x: 0 }}
+      className="flex flex-col py-2 md:py-10"
+    >
       <div>
         <h3 className="text-3xl ml-6 md:0 py-1 font-semibold dark:text-white">
           Projects
@@ -56,7 +63,7 @@ function Portafolio() {
           github="https://github.com/Camilo-J/Tweetable"
         />
       </div>
-    </section>
+    </motion.section>
   );
 }
 export default Portafolio;

@@ -16,12 +16,18 @@ import {
   SiVisualstudiocode,
 } from "react-icons/si";
 import { HiOutlineCommandLine } from "react-icons/hi2";
+import { motion } from "framer-motion";
 import Image from "next/image";
 import Profile from "../../public/profile.svg";
 
 function Skill() {
   return (
-    <section className="py-2 md:py-10">
+    <motion.section
+      initial={{ opacity: 0, x: -100 }}
+      transition={{ ease: "easeOut", duration: 1 }}
+      animate={{ opacity: 1, x: 0 }}
+      className="py-2 md:py-10"
+    >
       <div className="flex flex-col md:flex-row items-center  md:items-stretch gap-8 mb-12">
         <div className=" flex flex-col gap-4 md:justify-center">
           <h3 className="text-3xl ml-6 md:ml-0 py-1 text-gray-700 font-semibold dark:text-white">
@@ -68,7 +74,7 @@ function Skill() {
           <SkillCard icon={<DiLinux />} name="Linux" />
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 }
 
