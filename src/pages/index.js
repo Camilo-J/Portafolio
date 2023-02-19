@@ -41,7 +41,9 @@ export default function Home() {
             <nav className="w-20 flex md:h-full items-center">
               <ul className="md:flex flex-col gap-6 absolute md:left-0  text-teal-500 dark:text-white">
                 <li
-                  className="group/home w-14 h-14 hover:text-white  hover:bg-teal-500 rounded-full  flex items-center cursor-pointer justify-center transition-all duration-500 hover:w-32"
+                  className={`group/home w-14 h-14 ${
+                    currentPage === "home" ? "bg-teal-500 text-white" : ""
+                  } hover:text-white  hover:bg-teal-500 rounded-full  flex items-center cursor-pointer justify-center transition-all duration-500 hover:w-32`}
                   onClick={() => handlePage("home")}
                 >
                   <a className="flex gap-4 items-center justify-center   group-hover/home:p-3">
@@ -52,7 +54,9 @@ export default function Home() {
                   </a>
                 </li>
                 <li
-                  className="group/project w-14 h-14 hover:text-white  hover:bg-teal-500 rounded-full  flex items-center justify-center transition-all duration-500 hover:w-32 cursor-pointer"
+                  className={`group/project w-14 h-14 hover:text-white  hover:bg-teal-500 rounded-full ${
+                    currentPage === "portafolio" ? "bg-teal-500 text-white" : ""
+                  }  flex items-center justify-center transition-all duration-500 hover:w-32 cursor-pointer`}
                   onClick={() => handlePage("portafolio")}
                 >
                   <a className="flex gap-4 items-center justify-center   group-hover/project:p-3">
@@ -63,7 +67,9 @@ export default function Home() {
                   </a>
                 </li>
                 <li
-                  className="group/skills w-14 h-14 hover:text-white  hover:bg-teal-500 rounded-full flex items-center justify-center transition-all duration-500 hover:w-32 cursor-pointer"
+                  className={`group/skills w-14 h-14 hover:text-white  hover:bg-teal-500 rounded-full ${
+                    currentPage === "skills" ? "bg-teal-500 text-white" : ""
+                  } flex items-center justify-center transition-all duration-500 hover:w-32 cursor-pointer`}
                   onClick={() => handlePage("skills")}
                 >
                   <a className="flex gap-4 items-center justify-center    group-hover/skills:p-3">
