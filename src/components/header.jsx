@@ -4,8 +4,13 @@ import { RxHamburgerMenu } from "react-icons/rx";
 import { TiHome } from "react-icons/ti";
 import { IoBook } from "react-icons/io5";
 import Link from "next/link";
+import { URLSearchParams } from "next/dist/compiled/@edge-runtime/primitives/url";
+import { useRouter } from "next/router";
 
-const Header = ({ currentPage }) => {
+const Header = () => {
+  const router = useRouter();
+  const currentPage = router.pathname;
+
   return (
     <div className="sticky top-0">
       {/* <label htmlFor="nav" className="md:hidden text-4xl absolute top-3 left-1">
@@ -17,7 +22,7 @@ const Header = ({ currentPage }) => {
           <ul className="md:flex flex-col gap-6 absolute md:left-0  text-teal-500 dark:text-white">
             <li
               className={`group/home w-14 h-14 ${
-                currentPage === "home" ? "bg-teal-500 text-white" : ""
+                currentPage === "/" ? "bg-teal-500 text-white" : ""
               } hover:text-white  hover:bg-teal-500 rounded-full  flex items-center cursor-pointer justify-center transition-all duration-500 hover:w-32`}
             >
               <Link
@@ -32,10 +37,10 @@ const Header = ({ currentPage }) => {
             </li>
             <li
               className={`group/project w-14 h-14 hover:text-white  hover:bg-teal-500 rounded-full ${
-                currentPage === "portafolio" ? "bg-teal-500 text-white" : ""
+                currentPage === "/projects" ? "bg-teal-500 text-white" : ""
               }  flex items-center justify-center transition-all duration-500 hover:w-32 cursor-pointer`}
             >
-              <a
+              <Link
                 href="./projects"
                 className="flex gap-4 items-center justify-center   group-hover/project:p-3"
               >
@@ -43,14 +48,14 @@ const Header = ({ currentPage }) => {
                 <span className="hidden text-lg font-medium group-hover/project:block">
                   Projects
                 </span>
-              </a>
+              </Link>
             </li>
             <li
               className={`group/skills w-14 h-14 hover:text-white  hover:bg-teal-500 rounded-full ${
-                currentPage === "skills" ? "bg-teal-500 text-white" : ""
+                currentPage === "/skills" ? "bg-teal-500 text-white" : ""
               } flex items-center justify-center transition-all duration-500 hover:w-32 cursor-pointer`}
             >
-              <a
+              <Link
                 href="./skills"
                 className="flex gap-4 items-center justify-center    group-hover/skills:p-3"
               >
@@ -58,7 +63,7 @@ const Header = ({ currentPage }) => {
                 <span className="hidden  text-lg font-medium group-hover/skills:flex">
                   Skills
                 </span>
-              </a>
+              </Link>
             </li>
             <li className="group/skills w-14 h-14 hover:text-white  hover:bg-teal-500 rounded-full flex items-center justify-center transition-all duration-500 hover:w-32 cursor-pointer">
               <a
