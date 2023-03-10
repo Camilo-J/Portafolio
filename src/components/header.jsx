@@ -12,12 +12,12 @@ const Header = () => {
   const currentPage = router.pathname;
 
   return (
-    <div className="sticky top-0">
+    <div>
       {/* <label htmlFor="nav" className="md:hidden text-4xl absolute top-3 left-1">
         <RxHamburgerMenu />
       </label>
       <input id="nav" type={"checkbox"} className="peer" hidden /> */}
-      <div className="test2 md:ml-2 w-24  justify-start -top-28 transition-all duration-500 peer-checked:top-44 md:top-0 md:block md:h-screen z-50">
+      <div className="sticky top-0 md:ml-2 w-24  justify-start  transition-all duration-500 peer-checked:top-44 md:top-0 md:block md:h-screen z-50">
         <nav className="w-20 flex md:h-full items-center">
           <ul className="md:flex flex-col gap-6 absolute md:left-0  text-teal-500 dark:text-white">
             <li
