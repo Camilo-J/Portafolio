@@ -34,12 +34,13 @@ function Skill() {
             About me
           </h3>
           <p className="md:max-w-4xl  ml-4 md:text-lg ">
-            Hi, I&apos;m full stack developer with great passion about
-            teachnology in specially with videogames and programming.I am
-            passionate about constantly learning new technologies that allow me
-            to provide the most efficient solution to problems. I had the
-            opportunity to join a bootcamp where I learned a lot of things about
-            Rails, React,Ruby, Javascript, Soft Skill and Web development.
+            Hi, I&apos;m Camilo. I&apos;m full stack developer with great
+            passion about teachnology in specially with videogames,
+            problem-solving and programming. Self- taught, and fast learner who
+            works efficiently in a team. Interested in developing and managing
+            projects using agile methodologies to ensure an excellent user
+            experience, exceed company goals and improve skills. In my free
+            time, I like to swim, read books and coding.
           </p>
         </div>
         <div>
