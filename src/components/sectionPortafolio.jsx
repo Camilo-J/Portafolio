@@ -14,14 +14,14 @@ function Portafolio() {
       initial={{ opacity: 0, x: 100 }}
       transition={{ ease: "easeOut", duration: 1 }}
       animate={{ opacity: 1, x: 0 }}
-      className="flex flex-col py-2 md:py-10"
+      className="flex flex-col py-2 md:py-10 w-full items-center"
     >
-      <div>
+      <div className="self-center">
         <h3 className="text-3xl ml-6 md:0 py-1 font-semibold dark:text-white">
           Projects
         </h3>
       </div>
-      <div className="grid md:grid-cols-2 gap-8 py-10 lg:flex-row lg:flex-wrap">
+      <div className="grid md:grid-cols-2 gap-8 py-10  gap-x-64  lg:flex-row lg:flex-wrap">
         <ImageCard
           title={"Keepable"}
           content={`vanilla-javascript - HTML - CSS`}
