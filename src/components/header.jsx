@@ -3,8 +3,9 @@ import { ImFileOpenoffice } from "react-icons/im";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { TiHome } from "react-icons/ti";
 import { IoBook } from "react-icons/io5";
+import Link from "next/link";
 
-const Header = ({ handlePage, currentPage }) => {
+const Header = ({ currentPage }) => {
   return (
     <div className="sticky top-0">
       {/* <label htmlFor="nav" className="md:hidden text-4xl absolute top-3 left-1">
@@ -18,22 +19,26 @@ const Header = ({ handlePage, currentPage }) => {
               className={`group/home w-14 h-14 ${
                 currentPage === "home" ? "bg-teal-500 text-white" : ""
               } hover:text-white  hover:bg-teal-500 rounded-full  flex items-center cursor-pointer justify-center transition-all duration-500 hover:w-32`}
-              onClick={() => handlePage("home")}
             >
-              <a className="flex gap-4 items-center justify-center   group-hover/home:p-3">
+              <Link
+                href="./"
+                className="flex gap-4 items-center justify-center   group-hover/home:p-3"
+              >
                 <TiHome className="text-3xl" />
                 <span className="hidden group-hover/home:block text-lg font-medium">
                   Home
                 </span>
-              </a>
+              </Link>
             </li>
             <li
               className={`group/project w-14 h-14 hover:text-white  hover:bg-teal-500 rounded-full ${
                 currentPage === "portafolio" ? "bg-teal-500 text-white" : ""
               }  flex items-center justify-center transition-all duration-500 hover:w-32 cursor-pointer`}
-              onClick={() => handlePage("portafolio")}
             >
-              <a className="flex gap-4 items-center justify-center   group-hover/project:p-3">
+              <a
+                href="./projects"
+                className="flex gap-4 items-center justify-center   group-hover/project:p-3"
+              >
                 <IoBook className="text-3xl" />
                 <span className="hidden text-lg font-medium group-hover/project:block">
                   Projects
@@ -44,9 +49,11 @@ const Header = ({ handlePage, currentPage }) => {
               className={`group/skills w-14 h-14 hover:text-white  hover:bg-teal-500 rounded-full ${
                 currentPage === "skills" ? "bg-teal-500 text-white" : ""
               } flex items-center justify-center transition-all duration-500 hover:w-32 cursor-pointer`}
-              onClick={() => handlePage("skills")}
             >
-              <a className="flex gap-4 items-center justify-center    group-hover/skills:p-3">
+              <a
+                href="./skills"
+                className="flex gap-4 items-center justify-center    group-hover/skills:p-3"
+              >
                 <GiToolbox className="text-3xl" />
                 <span className="hidden  text-lg font-medium group-hover/skills:flex">
                   Skills
