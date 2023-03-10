@@ -1,17 +1,7 @@
+import { SectionIndex } from "@/components/body";
+import { Header } from "@/components/header";
 import Head from "next/head";
-import { AiFillGithub, AiFillLinkedin, AiFillYoutube } from "react-icons/ai";
-import { TiHome } from "react-icons/ti";
-import { IoBook } from "react-icons/io5";
-import Image from "next/image";
-import deved from "../../public/developerIcon.svg";
-import { GiToolbox } from "react-icons/gi";
-import { ImFileOpenoffice } from "react-icons/im";
-import { RxHamburgerMenu } from "react-icons/rx";
-import { motion } from "framer-motion";
-
 import { useState } from "react";
-import Portafolio from "@/components/sectionPortafolio";
-import Skill from "@/components/sectionSkill";
 
 export default function Home() {
   const [darkMode, setDarkMode] = useState(false);
@@ -29,127 +19,10 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className="bg-white md:flex flex-col relative dark:bg-gray-800">
-        <div>
-          <label
-            htmlFor="nav"
-            className="md:hidden text-4xl absolute top-3 left-1"
-          >
-            <RxHamburgerMenu />
-          </label>
-          <input id="nav" type={"checkbox"} className="peer" hidden />
-          <div className="md:ml-2 w-24 absolute justify-start -top-28 transition-all duration-500 peer-checked:top-44 md:top-0 md:block md:h-screen z-50">
-            <nav className="w-20 flex md:h-full items-center">
-              <ul className="md:flex flex-col gap-6 absolute md:left-0  text-teal-500 dark:text-white">
-                <li
-                  className={`group/home w-14 h-14 ${
-                    currentPage === "home" ? "bg-teal-500 text-white" : ""
-                  } hover:text-white  hover:bg-teal-500 rounded-full  flex items-center cursor-pointer justify-center transition-all duration-500 hover:w-32`}
-                  onClick={() => handlePage("home")}
-                >
-                  <a className="flex gap-4 items-center justify-center   group-hover/home:p-3">
-                    <TiHome className="text-3xl" />
-                    <span className="hidden group-hover/home:block text-lg font-medium">
-                      Home
-                    </span>
-                  </a>
-                </li>
-                <li
-                  className={`group/project w-14 h-14 hover:text-white  hover:bg-teal-500 rounded-full ${
-                    currentPage === "portafolio" ? "bg-teal-500 text-white" : ""
-                  }  flex items-center justify-center transition-all duration-500 hover:w-32 cursor-pointer`}
-                  onClick={() => handlePage("portafolio")}
-                >
-                  <a className="flex gap-4 items-center justify-center   group-hover/project:p-3">
-                    <IoBook className="text-3xl" />
-                    <span className="hidden text-lg font-medium group-hover/project:block">
-                      Projects
-                    </span>
-                  </a>
-                </li>
-                <li
-                  className={`group/skills w-14 h-14 hover:text-white  hover:bg-teal-500 rounded-full ${
-                    currentPage === "skills" ? "bg-teal-500 text-white" : ""
-                  } flex items-center justify-center transition-all duration-500 hover:w-32 cursor-pointer`}
-                  onClick={() => handlePage("skills")}
-                >
-                  <a className="flex gap-4 items-center justify-center    group-hover/skills:p-3">
-                    <GiToolbox className="text-3xl" />
-                    <span className="hidden  text-lg font-medium group-hover/skills:flex">
-                      Skills
-                    </span>
-                  </a>
-                </li>
-                <li className="group/skills w-14 h-14 hover:text-white  hover:bg-teal-500 rounded-full flex items-center justify-center transition-all duration-500 hover:w-32 cursor-pointer">
-                  <a
-                    className="flex gap-4 items-center justify-center    group-hover/skills:p-3"
-                    href="https://drive.google.com/file/d/1ezUxDUiJ64T_mvA_ZUtZYwZrqpWXH5X7/view?usp=sharing"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    <ImFileOpenoffice className="text-3xl" />
-                    <span className="hidden  text-lg font-medium group-hover/skills:flex">
-                      Resume
-                    </span>
-                  </a>
-                </li>
-              </ul>
-            </nav>
-          </div>
-        </div>
-        <div className="px-10 md:px-20 transition duration-500 ease-in-out lg:px-40 self-center">
-          <section className="min-h-screen md:flex">
-            {currentPage === "home" ? (
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ ease: "easeOut", duration: 1 }}
-                className="lg:flex lg:gap-x-8 lg:items-center"
-              >
-                <div>
-                  <div className="text-center p-10">
-                    <h2 className="text-5xl py-2 text-teal-600 font-medium md:text-6xl">
-                      Camilo Huanca
-                    </h2>
-                    <h3 className="text-2xl py-2 md:text-3xl dark:text-white">
-                      Full Stack Web Developer
-                    </h3>
-                    <p className="text-md py-5 leading-8 text-gray-800 md:text-xl max-w-xl mx-auto dark:text-white">
-                      I love exploring and learning new technologies. I&apos;m
-                      passionate about bringing digital products to life and
-                      I&apos;m a lifelong learner 🎓
-                    </p>
-                  </div>
-                  <div className=" text-5xl flex justify-center gap-16 py-3 text-gray-600 dark:text-teal-500">
-                    <a
-                      className="transition duration-500 ease-in-out rounded-full hover:text-teal-500  dark:hover:text-teal-300 hover:scale-105"
-                      href="https://github.com/Camilo-J"
-                      target={"_blank"}
-                      rel="noreferrer"
-                    >
-                      <AiFillGithub />
-                    </a>
-                    <a
-                      className="transition duration-500 ease-in-out rounded-full  hover:text-teal-500  dark:hover:text-teal-300 hover:scale-105"
-                      href="https://www.linkedin.com/in/camilohuanca/"
-                      target={"_blank"}
-                      rel="noreferrer"
-                    >
-                      <AiFillLinkedin />
-                    </a>
-                    <AiFillYoutube className="transition duration-500 ease-in-out rounded-full  hover:text-teal-500  dark:hover:text-teal-300 hover:scale-105" />
-                  </div>
-                </div>
-                <div className="relative mx-auto bg-gradient-to-b from-teal-500 rounded-full w-80 h-80 mt-20 mb-10 overflow-hidden md:h-96 md:w-96">
-                  <Image src={deved} alt="" fill objectFit="cover" />
-                </div>
-              </motion.div>
-            ) : currentPage === "portafolio" ? (
-              <Portafolio />
-            ) : (
-              <Skill />
-            )}
-          </section>
+      <main>
+        <div className="bg-white flex dark:bg-gray-800 ">
+          {<Header handlePage={handlePage} currentPage={currentPage} />}
+          {<SectionIndex />}
         </div>
       </main>
     </div>
