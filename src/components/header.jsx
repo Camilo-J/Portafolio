@@ -4,11 +4,13 @@ import { TiHome } from "react-icons/ti";
 import { IoBook } from "react-icons/io5";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import blogPost from "../assets/data.json";
 
 const Header = () => {
   const router = useRouter();
+  const locale = router.locale;
   const currentPage = router.pathname;
-
+  const values = blogPost.navbar.find((item) => item.locale === locale);
   return (
     <div>
       {/* <label htmlFor="nav" className="md:hidden text-4xl absolute top-3 left-1">
@@ -29,7 +31,7 @@ const Header = () => {
               >
                 <TiHome className="text-3xl" />
                 <span className="hidden group-hover/home:block text-lg font-medium">
-                  Home
+                  {values.home}
                 </span>
               </Link>
             </li>
@@ -44,7 +46,7 @@ const Header = () => {
               >
                 <IoBook className="text-3xl" />
                 <span className="hidden text-lg font-medium group-hover/project:block">
-                  Projects
+                  {values.project}
                 </span>
               </Link>
             </li>
@@ -59,14 +61,14 @@ const Header = () => {
               >
                 <GiToolbox className="text-3xl" />
                 <span className="hidden  text-lg font-medium group-hover/skills:flex">
-                  Skills
+                  {values.about}
                 </span>
               </Link>
             </li>
             <li className="group/skills w-14 h-14 hover:text-white  hover:bg-teal-500 rounded-full flex items-center justify-center transition-all duration-500 hover:w-32 cursor-pointer">
               <a
                 className="flex gap-4 items-center justify-center    group-hover/skills:p-3"
-                href="https://drive.google.com/file/d/1ezUxDUiJ64T_mvA_ZUtZYwZrqpWXH5X7/view?usp=sharing"
+                href={values.contact}
                 target="_blank"
                 rel="noreferrer"
               >
