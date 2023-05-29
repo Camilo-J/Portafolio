@@ -1,10 +1,8 @@
 import { GiToolbox } from "react-icons/gi";
 import { ImFileOpenoffice } from "react-icons/im";
-import { RxHamburgerMenu } from "react-icons/rx";
 import { TiHome } from "react-icons/ti";
 import { IoBook } from "react-icons/io5";
 import Link from "next/link";
-import { URLSearchParams } from "next/dist/compiled/@edge-runtime/primitives/url";
 import { useRouter } from "next/router";
 
 const Header = () => {
