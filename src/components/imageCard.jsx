@@ -1,6 +1,10 @@
 import Image from "next/image";
+import { useRouter } from "next/router";
+import blogPost from "../assets/data.json";
 
 function ImageCard({ image, github, demo, title, content }) {
+  const { locale } = useRouter();
+  const values = blogPost.project.find((item) => item.locale === locale);
   return (
     <div className="group/images relative overflow-hidden max-w-lg rounded-2xl">
       <Image
@@ -24,7 +28,7 @@ function ImageCard({ image, github, demo, title, content }) {
               target={"_blank"}
               rel="noreferrer"
             >
-              Demo
+              {values.demo}
             </a>
           ) : (
             ""
@@ -35,7 +39,7 @@ function ImageCard({ image, github, demo, title, content }) {
             target={"_blank"}
             rel="noreferrer"
           >
-            View Source
+            {values.source}
           </a>
         </div>
       </div>

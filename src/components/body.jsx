@@ -2,8 +2,12 @@ import { AiFillGithub, AiFillLinkedin, AiFillYoutube } from "react-icons/ai";
 import Image from "next/image";
 import deved from "../../public/developerIcon.svg";
 import { motion } from "framer-motion";
+import { useRouter } from "next/router";
+import blogPost from "../assets/data.json";
 
 const SectionIndex = () => {
+  const { locale } = useRouter();
+  const values = blogPost.home.find((item) => item.locale === locale);
   return (
     <div className="px-10 md:px-20 transition duration-500 ease-in-out lg:px-40 self-center">
       <section className="min-h-screen md:flex">
@@ -19,12 +23,10 @@ const SectionIndex = () => {
                 Camilo Huanca
               </h2>
               <h3 className="text-2xl py-2 md:text-3xl dark:text-white">
-                Full Stack Web Developer
+                {values.title}
               </h3>
               <p className="text-md py-5 leading-8 text-gray-800 md:text-xl max-w-xl mx-auto dark:text-white">
-                I love exploring and learning new technologies. I&apos;m
-                passionate about bringing digital products to life and I&apos;m
-                a lifelong learner 🎓
+                {values.description}
               </p>
             </div>
             <div className=" text-5xl flex justify-center gap-16 py-3 text-gray-600 dark:text-teal-500">

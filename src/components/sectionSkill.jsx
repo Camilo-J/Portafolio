@@ -19,8 +19,12 @@ import { HiOutlineCommandLine } from "react-icons/hi2";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Profile from "../../public/profile.svg";
+import { useRouter } from "next/router";
+import blogPost from "../assets/data.json";
 
 function Skill() {
+  const { locale } = useRouter();
+  const values = blogPost.about.find((item) => item.locale === locale);
   return (
     <motion.section
       initial={{ opacity: 0, x: -100 }}
@@ -31,17 +35,9 @@ function Skill() {
       <div className="flex flex-col md:flex-row items-center  md:items-stretch gap-8 mb-12">
         <div className=" flex flex-col gap-4 md:justify-center">
           <h3 className="text-3xl ml-6 md:ml-0 py-1 text-gray-700 font-semibold dark:text-white">
-            About me
+            {values.title}
           </h3>
-          <p className="md:max-w-4xl  ml-4 md:text-lg ">
-            Hi, I&apos;m Camilo. I&apos;m full stack developer with great
-            passion about teachnology in specially with videogames,
-            problem-solving and programming. Self- taught, and fast learner who
-            works efficiently in a team. Interested in developing and managing
-            projects using agile methodologies to ensure an excellent user
-            experience, exceed company goals and improve skills. In my free
-            time, I like to swim, read books and coding.
-          </p>
+          <p className="md:max-w-4xl  ml-4 md:text-lg ">{values.description}</p>
         </div>
         <div>
           <Image
