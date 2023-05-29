@@ -1,0 +1,54 @@
+{
+  "navbar": [
+    {
+      "locale": "en-US",
+      "home": "Home",
+      "about": "About",
+      "project": "Projects",
+      "contact": "https://drive.google.com/file/d/1ezUxDUiJ64T_mvA_ZUtZYwZrqpWXH5X7/view?usp=sharing"
+    },
+    {
+      "locale": "es-ES",
+      "home": "Inicio",
+      "about": "Sobre mi",
+      "project": "Proyectos",
+      "contact": "https://drive.google.com/file/d/112oS4ODvY9--L5lhG4oheBklYHUFgHSp/view"
+    }
+  ],
+  "home": [
+    {
+      "locale": "en-US",
+      "title": "Full Stack Developer",
+      "description": "I love exploring and learning new technologies. I'm passionate about bringing digital products to life and I'm a lifelong learner 🎓"
+    },
+    {
+      "locale": "es-ES",
+      "title": "Desarrollador Full Stack",
+      "description": "Me encata explorar y aprender nuevas tecnologías. Me apasiona dar vida a productos digitales y soy un aprendiz de por vida 🎓"
+    }
+  ],
+  "project": [
+    {
+      "locale": "en-US",
+      "demo": "Demo",
+      "source": "View Source"
+    },
+    {
+      "locale": "es-ES",
+      "demo": "Demo",
+      "source": "Ver Código"
+    }
+  ],
+  "about": [
+    {
+      "locale": "en-US",
+      "title": "About Me",
+      "description": "Hi, I'm Camilo. I'm full stack developer with great passion about teachnology in specially with videogames, problem-solving and programming. Self- taught, and fast learner who works efficiently in a team. Interested in developing and managing projects using agile methodologies to ensure an excellent user experience, exceed company goals and improve skills. In my free time, I like to swim, read books and make coding challenges."
+    },
+    {
+      "locale": "es-ES",
+      "title": "Sobre mi",
+      "description": "Hola, Soy Camilo. Soy desarrollador full stack con gran pasión por la tecnología en especial con los videojuegos, la resolución de problemas y la programación. Autodidacta y aprendiz rápido que trabaja eficientemente en equipo. Interesado en desarrollar y gestionar proyectos utilizando metodologías ágiles para garantizar una excelente experiencia de usuario, superar los objetivos de la empresa y mejorar las habilidades. En mi tiempo libre, me gusta nadar, leer libros y hacer retos de programacion."
+    }
+  ]
+}
