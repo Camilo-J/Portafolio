@@ -1,0 +1,9 @@
+---
+const { as: Tag = 'a', class: className, title, href, style = 'button' } = Astro.props;
+---
+
+<Tag class={`flex items-center justify-center gap-x-2 ${style}`} href={href} data-astro-prefetch>
+  <slot name="icon-before" />
+  <p>{title}</p>
+  <slot name="icon-after" />
+</Tag>
