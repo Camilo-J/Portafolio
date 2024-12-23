@@ -1,0 +1,165 @@
+---
+import PageLayout from '@/layouts/BaseLayout.astro';
+import Section from '@/components/molecules/Section/index.astro';
+import Card from '@/components/organisms/Card/index.astro';
+import ProjectCard from '@/components/organisms/ProjectCard/index.astro';
+import SkillLayout from '@/components/molecules/SkillLayout/index.astro';
+import astro from '@/assets/capturaCanva.jpeg';
+import InfoSection from '@/components/organisms/InfoSection/index.astro';
+import { Image } from 'astro:assets';
+
+const languages = ['Typescript', 'Ruby', 'PHP', 'C++', 'Elixir'];
+const frontend = ['React', 'NextJs', 'Tailwind'];
+const backend = ['Express', 'NodeJs', 'Ruby on Rails'];
+const others = ['AWS', 'CDK', 'Docker', 'CI/CD', 'Git', 'Bash'];
+---
+
+<PageLayout meta={{ title: 'Home' }}>
+  <div class="flex w-full flex-col gap-y-10">
+    <section class="flex flex-col items-center gap-y-7">
+      <Image src={astro} alt="profile photo" class="h-28 w-auto rounded-full p-2" loading="eager" />
+
+      <div class="flex flex-col items-center gap-y-4">
+        <h1 class="text-3xl font-bold">Camilo Huanca Torre</h1>
+
+        <InfoSection />
+      </div>
+    </section>
+
+    <Section title="About">
+      <p>
+        I'm a software developer with over a year of experience, focused on implementing innovative technological
+        solutions. I have experience in cloud technologies, primarily with AWS and CDK. My passion for continuous
+        learning drives me to stay up-to-date with the latest trends and technologies.
+      </p>
+    </Section>
+
+    <Section title="Experience">
+      <Card
+        heading="Software Developer"
+        subheading="Westpoint Software Solutions"
+        date="Nov 2023 - Nov 2024"
+        altText="Lorem, ipsum dolor sit"
+        imageClass="h-12 w-auto md:-left-16"
+      >
+        <ul class="ml-4 list-disc text-muted-foreground">
+          <li>
+            Created a dashboard for user management (creation, deletion, update) for different regions using AWS
+            Cognito.
+          </li>
+          <li>
+            Implemented MFA for user authentication, enhancing system security. ○ Developed endpoints using AWS API
+            Gateway and Lambdas to handle backend requests and processes.
+          </li>
+          <li>Developed and executed E2E and unit tests for the dashboard using Cypress, Vitest, Jest and Newman.</li>
+          <li>
+            Collaborated in designing and developing the user interface for assigning available Glasses for vehicles.
+          </li>
+          <li>Integrated external services using AWS Lambdas and DynamoDB to obtain specific data.</li>
+          <li>
+            Refactored components to improve code readability and reusability, and optimized application performance by
+            reducing unnecessary API requests.
+          </li>
+          <li>
+            Created script to handle the lambda versioning. It reduced to 6 minutes the time to update the versions of
+            the Lambdas in AWS.
+          </li>
+        </ul>
+      </Card>
+      <Card
+        heading="Laravel Developer"
+        subheading="Devdatep Consulting"
+        date="Sept 2022 - Oct 2023"
+        altText="Lorem, ipsum dolor sit"
+        imageClass="h-12 w-auto md:-left-16"
+      >
+        <ul class="ml-4 list-disc">
+          <li>
+            Collaborated with the development and database team to fix minor bugs and implement bots that interact with
+            the internal system.
+          </li>
+          <li>
+            Integrated the internal system with the Google Drive API to optimize and automate the company's internal
+            processes.
+          </li>
+        </ul>
+      </Card>
+      <Card
+        heading="Full Stack Candidate"
+        subheading="Codeable"
+        date="Aug 2022 - Feb 2023"
+        altText="Lorem, ipsum dolor sit"
+        imageClass="h-12 w-auto md:-left-16"
+      >
+        <ul class="ml-4 list-disc">
+          <li>Created front end projects using Javascript, Css, Html, React, styled components and Jest.</li>
+          <li>
+            Developed projects in Command Line Interface (CLI) with Ruby and web full stack applications with Ruby on
+            Rails, Css, Tailwind and Postgresql.
+          </li>
+        </ul>
+      </Card>
+    </Section>
+
+    <Section title="Education">
+      <Card
+        heading="Universidad Peruana de Ciencias Aplicadas"
+        subheading="Pursuing a Bachelor Degree in Software Engineering"
+        date="Jul 2024 - Aug 2029"
+        altText="Istp Argentina Logo"
+        imageClass="h-12 w-auto md:-left-16"
+      />
+      <Card
+        heading="Codeable"
+        subheading="Full Stack Developer"
+        date="Aug 2022 - Feb 2023"
+        altText="Codeable Logo"
+        imageClass="h-12 w-auto md:-left-16"
+      />
+      <Card
+        heading="Instituto de Educacion Superior Tecnologico Publico Argentina"
+        subheading="Associate Degree in Computer Engineering Technology/Technician"
+        date="Apr 2021 - Dec 2023"
+        altText="Istp Argentina Logo"
+        imageClass="h-12 w-auto md:-left-16"
+      />
+    </Section>
+
+    <Section title="Projects">
+      <div class="flex flex-col gap-y-3 lg:flex-row sm:gap-x-5 sm:gap-y-0 flex-wrap">
+        <ProjectCard
+          href="https://github.com/Camilo-J/Eatable"
+          heading="Eatable"
+          subheading="An app where the user can order their favorite dishes."
+          imagePath="/src/assets/main.png"
+          altText="eatable app"
+          class="w-full sm:w-1/2"
+        />
+        <ProjectCard
+          href="https://github.com/Camilo-J/ImageUploader"
+          heading="Image Uploader"
+          subheading="An app that allows you to upload images and get a link to share them with others."
+          imagePath="/src/assets/imageUploader3.png"
+          altText="eatable app"
+          class="w-full sm:w-1/2"
+        />
+
+        <ProjectCard
+          as="div"
+          heading="Coming soon..."
+          subheading=""
+          imagePath="/src/assets/coming-soon.png"
+          altText="Lorem, ipsum dolor sit"
+          class="w-full sm:w-1/2"
+        />
+      </div>
+    </Section>
+
+    <Section title="Skills">
+      <SkillLayout title="Languages" skills={languages} />
+      <SkillLayout title="Frontend" skills={frontend} />
+      <SkillLayout title="Backend" skills={backend} />
+      <SkillLayout title="Others" skills={others} />
+    </Section>
+  </div>
+</PageLayout>
