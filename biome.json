@@ -29,7 +29,6 @@
       "bracketSpacing": true
     }
   },
-  "html": { "formatter": { "selfCloseVoidElements": "always" } },
   "assist": {
     "enabled": true,
     "actions": { "source": { "organizeImports": "on" } }
